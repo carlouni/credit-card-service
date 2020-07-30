@@ -20,6 +20,15 @@ import java.util.regex.Pattern;
 @RestController
 public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
+    /**
+     * Handles the MethodArgumentNotValidException. This overrides the default behaviour
+     * in order to add extra information useful for the client.
+     * @param ex
+     * @param headers
+     * @param status
+     * @param request
+     * @return ResponseEntity<Object>
+     */
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
                                                                   HttpHeaders headers, HttpStatus status,

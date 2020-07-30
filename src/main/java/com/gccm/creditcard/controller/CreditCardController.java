@@ -26,7 +26,7 @@ public class CreditCardController {
     }
 
     /**
-     * Validates credit card numbers.
+     * Validates credit card number.
      * @param validationRequest contains the cardNumber to be validated.
      * @return ValidationResult
      */

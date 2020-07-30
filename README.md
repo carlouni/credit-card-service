@@ -33,7 +33,7 @@ Example output:
 
 ### Test using Swagger
 1. Open a web browser and go to http://localhost:8080/swagger-ui.html
-2. Pick up the endpoint <b>/api/credit-card/validate</b>
+2. Pick up the endpoint <b>POST /api/credit-card/validate</b>
 3. Click on <b>"Try it out"</b> button.
 4. Edit the JSON request body with a credit card number. See example below
 

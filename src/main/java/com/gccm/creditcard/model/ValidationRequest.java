@@ -7,6 +7,7 @@ import javax.validation.constraints.Pattern;
  */
 public class ValidationRequest {
 
+    /** Validates the cardNumber only contains numeric digits */
     @Pattern(regexp="^[1-9][0-9\\s]*[0-9]$", message = "Must contain valid digits and no blank spaces at the beginning and end.")
     private String cardNumber;
 

@@ -1,7 +1,8 @@
 package com.gccm.creditcard.strategy;
 
 /**
- * Defines the contract for implementing validation strategies.
+ * Defines the contract for implementing validation strategies. Any new vendor
+ * validation should implement this interface.
  */
 public interface Strategy {
 
