@@ -25,6 +25,11 @@ public class CreditCardController {
         this.strategyFactoryService = strategyFactoryService;
     }
 
+    /**
+     * Validates credit card numbers.
+     * @param validationRequest contains the cardNumber to be validated.
+     * @return ValidationResult
+     */
     @PostMapping(path="/validate")
     public ValidationResult validate(@Valid @RequestBody ValidationRequest validationRequest) {
 
