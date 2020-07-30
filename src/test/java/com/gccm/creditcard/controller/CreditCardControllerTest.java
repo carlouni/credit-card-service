@@ -19,9 +19,12 @@ public class CreditCardControllerTest {
 
     @LocalServerPort
     private int port;
+    private final TestRestTemplate restTemplate;
 
     @Autowired
-    private TestRestTemplate restTemplate;
+    public CreditCardControllerTest(TestRestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
     @Test
     public void restResponseShouldMatchTestCaseOutput() throws Exception {
@@ -38,8 +41,8 @@ public class CreditCardControllerTest {
                     new HttpEntity<>(new ValidationRequest(cardTest.getInput()));
 
             ValidationResult result =
-                    this.restTemplate.postForObject("http://localhost:" + port + "/api/validate",
-                            request, ValidationResult.class);
+                    this.restTemplate.postForObject("http://localhost:" + port
+                                    + "/api/credit-card/validate", request, ValidationResult.class);
 
             String actual =
                     String.format("%s: %s (%s)", result.getVendor(), result.getCardNumber(), result.getStatus());
