@@ -14,7 +14,7 @@ public interface Strategy {
     /**
      * Returns true if cardNumber passed the validation strategy. It
      * return false otherwise.
-     * @param cardNumber
+     * @param cardNumber should contain only digits without empty spaces.
      * @return boolean
      */
     public boolean validate(String cardNumber);

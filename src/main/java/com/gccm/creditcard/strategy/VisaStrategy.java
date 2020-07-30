@@ -2,6 +2,8 @@ package com.gccm.creditcard.strategy;
 
 import org.springframework.stereotype.Component;
 
+import java.util.regex.Pattern;
+
 @Component
 public class VisaStrategy implements Strategy {
     private final String name = "VISA";
@@ -14,7 +16,9 @@ public class VisaStrategy implements Strategy {
     @Override
     public boolean validate(String cardNumber) {
 
-        // TODO: needs implementation
-        return true;
+        return Pattern
+                .compile("^4([0-9]{12}|[0-9]{15})$")
+                .matcher(cardNumber)
+                .matches();
     }
 }
