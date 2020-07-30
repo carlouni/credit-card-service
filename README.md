@@ -51,6 +51,29 @@ Example output:
 }
 ```
 
+### Bad requests
+The validation endpoint returns **400 Bad request** if non numeric digits
+are included in the card number.
+
+Example:
+```JSON
+{
+  "cardNumber": "AAAA BBBB CCCC DDDD"
+}
+```
+Response:
+```JSON
+{
+  "timestamp": "2020-07-30T12:14:37.477+00:00",
+  "status": 400,
+  "error": "Bad Request",
+  "message": [
+    "cardNumber: Must contain valid digits and no blank spaces at the beginning and end."
+  ],
+  "path": "/api/credit"
+}
+```
+
 ### Running automated tests
 Run automated tests by executing
 ```
